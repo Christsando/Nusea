@@ -14,7 +14,7 @@ export default function Navbar() {
           <a href="#" className="ml-5 mr-5 text-blue-500 hover:text-blue-600">Home</a>
           <a href="#about" className="ml-5 mr-5 text-blue-500 hover:text-blue-600">About</a>
           <a href="#contact" className="ml-5 mr-5 text-blue-500 hover:text-blue-600">Contact</a>
-          <button className="ml-5 mr-3 px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">Login</button>
+          <button className="ml-5 mr-3 px-4 py-2 border-2 border-black-200 bg-white text-blue-500 rounded hover:bg-gray-200">Login</button>
           <button className="ml-3 mr-5 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Register</button>
         </div>
       </div>
