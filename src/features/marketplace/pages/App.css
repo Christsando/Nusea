@@ -4,3 +4,33 @@
   display: grid;
   flex-direction: column;
 }
+
+.App .titleSection {
+  text-align: start;
+  font-size: 2rem;
+  justify-content: center;
+  margin:30px 0px 30px 100px;
+}
+
+.App .productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px 40px;
+  padding: 0px 100px 30px 100px;
+}
+
+.App .keunggulanGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px 40px;
+  padding: 0px 100px 0px 100px;
+}
+
+.keunggulanGrid .keunggulanCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}

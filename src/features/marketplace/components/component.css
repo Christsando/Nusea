@@ -33,13 +33,67 @@
 
 /* product component section */
 .productCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #e8ecf4;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 16px;
+    width: 200px;
+    height: 300px;
+}
+.productCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+.productDetailsContainer {
+    display: flex;
+    flex-direction: column;
 }
 .productCard h3 {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     color: #333;
+}
+.productCard .priceAndButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+.productCard .plusButton {
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.plusButton .iconPlus {
+    color: rgb(0, 0, 0);
+    padding: 6px;
+    border-radius: 50%;
+    border:  1px solid black;
+}
+.productCard .product-name {
+    justify-items: left;
+    align-items: start;
+    display: flex;
+}
+.priceAndButtonContainer p {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    color: #555;
+    align-items: center;
+}
+
+.keunggulanCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 16px;
+    width: 200px;
+    height: 300px;
 }
