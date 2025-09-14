@@ -11,7 +11,7 @@ export default function Hero() {
             SEAFOOD SEGAR <br /><br /> DARI INDONESIA MENUJU DUNIA
           </h1>
         </div>
-        <div className="px-60 bg-black bg-opacity-10 w-full h-full flex flex-col items-start justify-center">
+        <div className="px-20 md:px-10 lg:px-60 bg-black bg-opacity-10 w-full h-screen flex flex-col md:items-center lg:items-start justify-center">
           <a className="mt-10 px-6 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg hover:bg-orange-600 cursor-pointer">
             Pelajari Selengkapnya
           </a>
