@@ -2,7 +2,7 @@ import bannerImg from '../../../assets/images/market-banner.png'
 
 export default function Hero() {
   return (
-    <section
+    <section id="home"
       className="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center"
       style={{ backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.7)), url(${bannerImg})` }}
     >
@@ -12,9 +12,9 @@ export default function Hero() {
           </h1>
         </div>
         <div className="px-60 bg-black bg-opacity-10 w-full h-full flex flex-col items-start justify-center">
-          <button className="mt-10 px-6 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg hover:bg-orange-600">
+          <a className="mt-10 px-6 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg hover:bg-orange-600 cursor-pointer">
             Pelajari Selengkapnya
-          </button>
+          </a>
         </div>
         
     </section>

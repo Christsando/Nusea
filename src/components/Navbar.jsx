@@ -11,7 +11,7 @@ export default function Navbar() {
 
         {/* Menu */}
         <div className="flex items-center">
-          <a href="#" className="pt-5 pb-5 pl-5 pr-5 text-blue-500 hover:text-blue-600 hover:bg-gray-200">Home</a>
+          <a href="#home" className="pt-5 pb-5 pl-5 pr-5 text-blue-500 hover:text-blue-600 hover:bg-gray-200">Home</a>
           <a href="#about" className="pt-5 pb-5 pl-5 pr-5 text-blue-500 hover:text-blue-600 hover:bg-gray-200">About</a>
           <a href="#contact" className="pt-5 pb-5 pl-5 pr-5 text-blue-500 hover:text-blue-600 hover:bg-gray-200">Contact</a>
           <button className="ml-5 mr-3 px-4 py-2 border-2 border-black-200 bg-white text-blue-500 rounded hover:bg-gray-200">Login</button>
