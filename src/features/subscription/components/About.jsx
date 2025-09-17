@@ -24,11 +24,7 @@ const AboutSection = () => {
         </div>
 
         <div className="relative flex justify-end items-end">
-          <img 
-            src={aboutImg} 
-            alt="Tentang Kami" 
-            className="w-full object-contain"
-          />
+          <img src={aboutImg} alt="Tentang Kami" className="w-full object-contain" />
 
           <a className="absolute bottom-10 left-1/2 transform -translate-x-1/2 px-6 py-3 bg-orange-500 text-white lg:text-2xl md:text-xl font-bold rounded-full shadow-lg shadow-white/50 hover:bg-orange-600 cursor-pointer">
             Belanja Sekarang

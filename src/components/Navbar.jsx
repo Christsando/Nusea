@@ -4,12 +4,10 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-1 flex items-center justify-between h-auto">
-        {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-14"/>
         </div>
 
-        {/* Menu */}
         <div className="flex items-center">
           <a href="#home" className="pt-5 pb-5 pl-5 pr-5 text-blue-500 hover:text-blue-600 hover:bg-gray-200">Home</a>
           <a href="#about" className="pt-5 pb-5 pl-5 pr-5 text-blue-500 hover:text-blue-600 hover:bg-gray-200">About</a>
