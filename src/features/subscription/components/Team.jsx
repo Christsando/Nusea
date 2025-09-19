@@ -1,15 +1,17 @@
 import React from "react";
 import wisnuIMG from "../../../assets/images/Wisnu.png"
 import ekaIMG from "../../../assets/images/Eka.png";
-import witaIMG from "../../../assets/images/Wita.jpg"
+import witaIMG from "../../../assets/images/Wita.jpg";
+import kireiIMG from "../../../assets/images/Kirei.png";
+import zaraIMG from "../../../assets/images/Zara.jpg";
 
 
 const team = [
   { id: 1, name: "Rizky Saputra Al Amir", role: "Technopreneur", img: ekaIMG },
   { id: 2, name: "Muhammad Faris Alfaqih", role: "Technopreneur", img: "" },
   { id: 3, name: "Muhammad Daffa Fachrurozi", role: "Technopreneur", img: "" },
-  { id: 4, name: "Kirei Najwa Shafira", role: "UI/UX", img: ""},
-  { id: 5, name: "Azzahra Aulia Khoirunnisa", role: "UI/UX", img: "https://via.placeholder.com/200" },
+  { id: 4, name: "Kirei Najwa Shafira", role: "UI/UX", img: kireiIMG},
+  { id: 5, name: "Azzahra Aulia Khoirunnisa", role: "UI/UX", img: zaraIMG },
   { id: 6, name: "Wita Septia Ningrum Nuriachmad Miarjo", role: "UI/UX", img: witaIMG },
   { id: 7, name: "Ariel Christsando Yudistya Putra", role: "Frontend", img: "https://via.placeholder.com/200" },
   { id: 8, name: "Wisnu Cakra Putra Pamungkas", role: "Frontend", img: wisnuIMG },
@@ -28,7 +30,7 @@ const TeamSection = () => {
       <div className="overflow-x-auto">
         <div className="flex gap-20 px-6 md:px-12">
           {team.map((member) => (
-            <div key={member.id} className="group min-w-[220px] bg-white rounded-lg shadow-md flex flex-col items-center justify-center transition-all duration-300 py-0">
+            <div key={member.id} className="group min-w-[220px] bg-white rounded-lg shadow-md flex flex-col items-center justify-center transition-all duration-300 py-0 mb-10">
 
               <div className="w-full pt-5 h-48 bg-transparent flex items-center justify-center overflow-hidden group-hover:bg-blue-600 group-hover:rounded-t-lg duration-300">
                 <img src={member.img} alt={member.name} className="object-cover w-3/4 h-full rounded-t-lg bg-gray-200"/>
