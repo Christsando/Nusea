@@ -4,6 +4,8 @@ import ekaIMG from "../../../assets/images/Eka.png";
 import witaIMG from "../../../assets/images/Wita.jpg";
 import kireiIMG from "../../../assets/images/Kirei.png";
 import zaraIMG from "../../../assets/images/Zara.jpg";
+import arielIMG from "../../../assets/images/ariel.png";
+import rafiIMG from "../../../assets/images/Rafi.jpg"
 
 
 const team = [
@@ -13,11 +15,11 @@ const team = [
   { id: 4, name: "Kirei Najwa Shafira", role: "UI/UX", img: kireiIMG},
   { id: 5, name: "Azzahra Aulia Khoirunnisa", role: "UI/UX", img: zaraIMG },
   { id: 6, name: "Wita Septia Ningrum Nuriachmad Miarjo", role: "UI/UX", img: witaIMG },
-  { id: 7, name: "Ariel Christsando Yudistya Putra", role: "Frontend", img: "https://via.placeholder.com/200" },
+  { id: 7, name: "Ariel Christsando Yudistya Putra", role: "Frontend", img: arielIMG },
   { id: 8, name: "Wisnu Cakra Putra Pamungkas", role: "Frontend", img: wisnuIMG },
   { id: 9, name: "Muhammad Rakha Alfaruq", role: "Frontend", img: "https://via.placeholder.com/200" },
-  { id: 10, name: "Naufal Rafi", role: "Backend", img: "https://via.placeholder.com/200" },
-  { id: 11, name: "Cheisya Valda Wibawaningrum", role: "Backend", img: "https://via.placeholder.com/200" },
+  { id: 10, name: "Naufal Rafi", role: "Backend", img: rafiIMG },
+  // { id: 11, name: "Cheisya Valda Wibawaningrum", role: "Backend", img: "https://via.placeholder.com/200" },
 ];
 
 const TeamSection = () => {
