@@ -1,9 +1,16 @@
 import "./component.css";
 import { Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const ProductsCard = ({ name, price, image }) => {
+const ProductsCard = ({ id, name, price, image }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/product/${id}`);
+    };
+
     return (
-        <div className="productCard">
+        <div className="productCard" onClick={handleClick} style={{ cursor: "pointer" }}>
             <img
                 src={image}
                 alt={name}
