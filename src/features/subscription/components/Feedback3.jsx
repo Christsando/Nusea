@@ -1,3 +1,9 @@
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import user1 from "../../../assets/images/nelayan1.png"; 
 import user2 from "../../../assets/images/nelayan2.png"; 
@@ -54,29 +60,40 @@ const Feedback = () => {
           Apa Kata Mereka?
         </h2>
 
-        <div className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 gap-12">
+        <Swiper
+          modules={[Pagination, Navigation]}
+          spaceBetween={30}
+          slidesPerView={3}
+          navigation
+          
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
           {testimonials.map((item) => (
-            <div key={item.id} className="min-w-[80%] md:min-w-[45%] lg:min-w-[30%] snap-center text-white font-semibold p-6 mb-10 rounded-lg shadow-md bg-[#8FB2E6] hover:bg-blue-600 duration-200">
+            <SwiperSlide key={item.id}>
+              <div className={`p-6 rounded-lg shadow-md relative bg-blue-600 text-white`}>
+                <div className="flex mb-4 text-yellow-400">
+                  {Array.from({ length: item.rating }).map((i) => (
+                    <span key={i}>★</span>
+                  ))}
+                  {Array.from({ length: 5 - item.rating }).map((i) => (
+                    <span key={i}>☆</span>
+                  ))}
+                </div>
 
-              <div className="flex mb-4 text-yellow-400">
-                {Array.from({ length: item.rating }).map((i) => (
-                  <span key={i}>★</span>
-                ))}
-                {Array.from({ length: 5 - item.rating }).map((i) => (
-                  <span key={i}>☆</span>
-                ))}
+                <p className="mb-6 leading-relaxed">{item.text}</p>
+
+                <div className="flex items-center gap-4">
+                  <img src={item.img} alt={item.name} className="w-12 h-12 rounded-full border-2 border-white object-cover"/>
+                  <h4 className="font-bold">{item.name}</h4>
+                </div>
               </div>
-
-              <p className="mb-6 leading-relaxed">{item.text}</p>
-
-              <div className="flex items-center gap-4">
-                <img src={item.img} alt={item.name} className="w-12 h-12 rounded-full border-2 border-white object-cover"/>
-                <h4 className="font-bold">{item.name}</h4>
-              </div>
-
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

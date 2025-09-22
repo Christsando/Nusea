@@ -1,9 +1,9 @@
 import React from "react";
-import instagramIcon from "../../../assets/mdi_instagram.png";
-import tiktokIcon from "../../../assets/ic_baseline-tiktok.png";
-import linkedinIcon from "../../../assets/line-md_linkedin.png";
-import facebookIcon from "../../../assets/icon-park-outline_facebook.png";
-import whatsappIcon from "../../../assets/ic_baseline-whatsapp.png";
+import instagramIcon from "../assets/mdi_instagram.png";
+import tiktokIcon from "../assets/ic_baseline-tiktok.png";
+import linkedinIcon from "../assets/line-md_linkedin.png";
+import facebookIcon from "../assets/icon-park-outline_facebook.png";
+import whatsappIcon from "../assets/ic_baseline-whatsapp.png";
 
 
 const Footer = () => {
