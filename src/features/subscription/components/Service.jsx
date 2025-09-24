@@ -1,40 +1,13 @@
 import React from "react";
-import aboutImg from "../../../assets/images/about-image.png";
 import exportImg from "../../../assets/export.png";
 import subscriptionImg from "../../../assets/subscription.png";
 import forumImg from "../../../assets/forum.png";
 import educationImg from "../../../assets/education.png";
 
-const AboutSection = () => {
+const Service = () => {
   return (
-    <section className="w-full py-0 pt-20 bg-white" id="about">
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-6 md:px-0">
-        
-        <div>
-          <h3 className="text-orange-500 font-bold text-3xl mb-2">Tentang Kami</h3>
-          <h2 className="text-2xl md:text-4xl font-bold text-blue-600 mb-4">
-            Apakah kamu tahu?
-          </h2>
-          <p className="text-gray-700 lg:text-xl md:text-base leading-relaxed">
-            Nusea adalah Startup Digital yang menghubungkan nelayan Indonesia 
-            dengan pasar global melalui sistem berbasis komunitas dan teknologi. 
-            Nusea menghadirkan fitur ekspor hasil laut, edukasi, dan forum interaktif, 
-            serta mendukung perikanan berkelanjutan mendukung SDGs 14 dan 17.
-          </p>
-        </div>
-
-        <div className="relative flex justify-end items-end">
-          <img src={aboutImg} alt="Tentang Kami" className="w-full object-contain" />
-
-          <a className="absolute bottom-5 lg:bottom-10  left-1/2 transform -translate-x-1/2 px-6 py-3 bg-orange-500 text-white lg:text-2xl md:text-xl font-bold rounded-full shadow-lg shadow-white/50 hover:bg-orange-600 cursor-pointer">
-            Belanja Sekarang
-          </a>
-        </div>
-      </div>
-
-
-
-      {/* <div className="w-full py-20 bg-blue-600 text-white">
+    <section className="w-full py-0 pt-0 bg-white" id="service">
+      <div className="w-full py-20 bg-blue-600 text-white">
 
         <div className="container mx-auto px-6 md:px-0 text-center">
 
@@ -109,9 +82,9 @@ const AboutSection = () => {
           </div>
 
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default Service;
