@@ -1,4 +1,4 @@
-import "./component.css";
+import "./style/component.css";
 
 const PriceFilter = ({ type, isActive, onClick }) => {
     const priceRanges = [

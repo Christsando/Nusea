@@ -1,4 +1,4 @@
-import "./component.css";
+import "./style/component.css";
 
 const TypeFilter = ({ type, isActive, onClick }) => {
     const categories = [
