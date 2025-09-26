@@ -1,0 +1,41 @@
+/* table content */
+.cartTableContainer {
+    border-radius: 10px;
+    overflow: hidden;
+    height: fit-content;
+}
+.cartTable {
+    border-collapse: collapse;
+    border: solid 1px #eee;
+}
+.cartHeader {
+    background-color: #0066e6; /* biru */
+    color: white;
+}
+.cartHeader th {
+    padding-inline: 50px ;
+    border: solid 1px #0259DE;
+    padding-inline: 70px;
+    font-size: 16px;
+    padding: 12px 36px;
+    font-weight: 600;
+}
+.cartTable tbody {
+    text-align: center;
+}
+.cartTable td {
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(128, 128, 128);
+    border-bottom: solid 1px #eee;
+}
+.cartTable .imageColumn {
+   padding-inline: 100px;
+}
+.cartTable .quantityCell {
+    padding-inline: 30px;
+}
+.cartTable .totalCell {
+    padding-inline: 30px;
+}

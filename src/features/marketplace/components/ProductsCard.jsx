@@ -1,4 +1,4 @@
-import "./component.css";
+import "./style/component.css";
 import { Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +25,7 @@ const ProductsCard = ({ id, name, price, image }) => {
                 <div className="priceAndButtonContainer">
                     <p className="product-price">{price}</p>
                     <a className="plusButton">
-                        <Plus size={12} className="iconPlus" />
+                        <Plus className="iconPlus" />
                     </a>
                 </div>
             </div>

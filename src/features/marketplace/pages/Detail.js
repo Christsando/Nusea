@@ -7,11 +7,14 @@ import Button from '@mui/material/Button';
 import ButtonQuantity from '../components/ButtonQuantity';
 import Review from "../components/Review"
 import { Truck, Package } from "lucide-react";
-import ProductsCard from '../components/ProductsCard';
-import HistoryTable from '../components/HistoryTable';
+import './App.css';
+import Navbar from '../../../components/Navbar';
+import Footer from '../../../components/Footer';
+import { useNavigate } from "react-router-dom";
 
 function Detail() {
     const { id } = useParams();
+    const navigate = useNavigate();
     // const [product, setProduct] = useState(null);
 
     return (
@@ -19,6 +22,7 @@ function Detail() {
             <title>Nusea | Detail Produk</title>
 
             <main>
+                <Navbar />
                 <div className='upperContainer'>
                     {/* image section */}
                     <div className='imageContainer'>
@@ -27,8 +31,8 @@ function Detail() {
 
                     {/* detail section */}
                     <div className='detailContainer'>
+                        
                         {/* change with API if already have */}
-
                         <div className='productNameContainer'>
                             {/* product name */}
                             <h2>Keptingan Rajungan</h2>
@@ -76,7 +80,7 @@ function Detail() {
                         <div className='buttonContainer'>
                             <div className='addToCartContainer'>
                                 <ButtonQuantity />
-                                <Button variant="contained" color="error" sx={{ borderRadius: 20 }} className='addToCartButton'>
+                                <Button variant="contained" onClick={() => navigate("/market/cart")} color="error" sx={{ borderRadius: 20 }} className='addToCartButton'>
                                     Tambah ke Keranjang
                                 </Button>
                             </div>
@@ -96,11 +100,8 @@ function Detail() {
                         <a href='#'>Lihat lebih banyak ulasan &gt;</a>
                     </div>
                 </div>
-
-                <div>
-                    <HistoryTable/>
-                </div>
             </main>
+            <Footer/>
         </div>
     );
 }

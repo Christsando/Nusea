@@ -1,6 +1,6 @@
-import { Star, Heart } from "lucide-react";
+import { Star } from "lucide-react";
 import Avatar from '@mui/material/Avatar';
-import "./component.css";
+import "./style/component.css";
 
 const Review = () => {
     return (
@@ -11,7 +11,7 @@ const Review = () => {
                 <h4>Remy Sharp</h4>
             </div>
             <div className="starContainer">
-                <div>
+                <div className="ratingContainer">
                     <Star className="starIconFull" />
                     <Star className="starIconFull" />
                     <Star className="starIconFull" />

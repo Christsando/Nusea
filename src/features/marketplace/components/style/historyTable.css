@@ -1,0 +1,70 @@
+/* table */
+.historyTable {
+  width: 100%;
+  border-collapse: separate;   /* jangan pakai collapse */
+  border-spacing: 0;           /* default spacing */
+  border: solid 1px #dcdcdc;   /* border luar */
+  border-radius: 8px;          /* rounded corner */
+  overflow: hidden;            /* biar radius kepotong */
+  font-family: Arial, sans-serif;
+}
+
+/* header */
+.historyHeader {
+  background-color: #0259de;
+  color: white;
+}
+.historyHeader th {
+  padding: 15px;
+  text-align: center;
+}
+
+/* body cell */
+.historyTable tbody td {
+  padding: 20px;
+  border-top: solid 1px #e0e0e0; /* garis antar row */
+  text-align: center;
+}
+
+/* item cell (image + name) */
+.itemCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.itemCell img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+/* status */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.status.success {
+  background-color: #00c853; /* hijau solid */
+  color: white;
+}
+
+/* reorder button */
+.reorderBtn {
+  background: none;
+  border: none;
+  color: #0259de;
+  font-weight: bold;
+  cursor: pointer;
+}
+.reorderBtn:hover {
+  text-decoration: underline;
+}
