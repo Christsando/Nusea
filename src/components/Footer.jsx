@@ -8,7 +8,7 @@ import whatsappIcon from "../assets/ic_baseline-whatsapp.png";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-100 py-24">
+    <footer id="contact" className="w-full bg-gray-100 py-24">
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-start px-6 md:px-0">
         
         <div>
