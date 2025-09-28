@@ -2,6 +2,9 @@ import TypeFilter from "../components/TypeFilter";
 import PriceFilter from "../components/PriceFilter";
 import { FaSearch } from "react-icons/fa";
 import ProductsCard from '../components/ProductsCard';
+import './App.css';
+import Navbar from '../../../components/Navbar';
+import Footer from '../../../components/Footer';
 
 function Products() {
 
@@ -18,6 +21,11 @@ function Products() {
         { id: 10, name: "Paus", price: "Rp100.000.000/Kg", image: "" },
         { id: 11, name: "Kerang Hijau", price: "Rp100.000/Kg", image: "" },
         { id: 12, name: "Kerang", price: "Rp30.000/Kg", image: "" },
+        { id: 13, name: "Ikan Bandeng", price: "Rp50.000/Kg", image: "" },
+        { id: 14, name: "Kepiting", price: "Rp150.000/Kg", image: "" },
+        { id: 15, name: "Paus", price: "Rp100.000.000/Kg", image: "" },
+        { id: 16, name: "Kerang Hijau", price: "Rp100.000/Kg", image: "" },
+        { id: 17, name: "Kerang", price: "Rp30.000/Kg", image: "" },
     ];
 
     return (
@@ -25,6 +33,7 @@ function Products() {
             <title>Nusea | Products</title>
 
             {/* Filter by Type */}
+            <Navbar />
             <div className="filterSectionContainer">
                 <TypeFilter />
                 <PriceFilter />

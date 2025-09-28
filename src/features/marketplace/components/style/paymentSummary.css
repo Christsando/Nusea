@@ -1,0 +1,32 @@
+.summaryContainer {
+    background: #fff;
+    border-radius: 10px 10px 20px 20px;
+    border: solid 1px #e0e0e0;
+    overflow: hidden;
+}
+.summaryHeader {
+    background: #0066ff;
+    color: #fff;
+    padding: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.summaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.summaryTable th,
+.summaryTable td {
+    padding: 12px;
+    border-bottom: 1px dashed #ddd;
+    text-align: left;
+    font-size: 16px;
+}  
+.summaryRow td {
+    font-weight: bold;
+}
+.summaryRow.total td {
+    border-bottom: none;
+    background-color: #ebebeb;
+}

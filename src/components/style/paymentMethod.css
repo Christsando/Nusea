@@ -1,0 +1,100 @@
+/* overlay */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* box */
+.popupBox {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.popupBox h2 {
+  margin-bottom: 20px;
+}
+
+/* payment options */
+.paymentOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.paymentOption.active {
+  border: 2px solid #0259de;
+  background: #f5f9ff;
+}
+.paymentOption input {
+  margin-right: 8px;
+}
+.paymentOption label {
+  flex: 1;
+}
+
+/* icons */
+.icons img {
+  height: 20px;
+  margin-left: 5px;
+}
+
+/* form */
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+.cardForm input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* qris */
+.qrisBox {
+  text-align: center;
+  margin: 15px 0;
+}
+.qrisImage {
+  width: 200px;
+  height: 200px;
+}
+
+/* buttons */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.payBtn {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.closeBtn {
+  background: #ccc;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}

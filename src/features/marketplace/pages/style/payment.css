@@ -1,0 +1,38 @@
+/* payment */
+.paymentPageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-items: center;
+}
+.paymentPage {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top:90px;
+}
+.identityAndPaymentContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-inline: 100px;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.payNowButton {
+    background-color: #ff5c42;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.payNowButton:hover {
+    background-color: #e44a33;
+}

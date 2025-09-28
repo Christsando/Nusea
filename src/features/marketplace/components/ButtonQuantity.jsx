@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "./component.css";
+import "./style/component.css";
+// add new library untuk react-redux
 
-function ButtonQuantity() {
+function ButtonQuantity({ className = "" }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {

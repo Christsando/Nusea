@@ -5,6 +5,8 @@ import ExportIcon from '../../../assets/icon/box.png';
 import FreshIcon from '../../../assets/icon/car_box.png';
 import SatisfactionIcon from '../../../assets/icon/hand_box.png';
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../../components/Navbar";
+import Footer from "../../../components/Footer";
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
       <title>Nusea | Market</title>
 
       {/* Banner Header */}
+      <Navbar />
       <header>
         <MarketBanner />
       </header>
@@ -52,7 +55,7 @@ function App() {
         </div>
 
         {/* this is separator */}
-        <h1 className="titleSection">Produk Unggulan</h1>
+        <h1 className="titleSection" id="productsSection">Produk Unggulan</h1>
 
         {/* TODO : Create list, use grid untuk semua product  */}
         <div className='productGrid'>
@@ -114,6 +117,8 @@ function App() {
         </div>
 
       </main>
+
+      <Footer/>
     </div>
   );
 };
