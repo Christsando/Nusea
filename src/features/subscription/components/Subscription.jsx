@@ -40,14 +40,14 @@ const PricingSection = () => {
     },
   ];
 
-  const handleBuy = () => {
-    if (selectedPlan) {
-      alert(`Kamu memilih: ${selectedPlan.name}`);
-      // di sini bisa diarahkan ke halaman checkout atau API call
-    } else {
-      alert("Silakan pilih paket dulu sebelum membeli 😊");
-    }
-  };
+  // const handleBuy = () => {
+  //   if (selectedPlan) {
+  //     alert(`Kamu memilih: ${selectedPlan.name}`);
+  //     // di sini bisa diarahkan ke halaman checkout atau API call
+  //   } else {
+  //     alert("Silakan pilih paket dulu sebelum membeli 😊");
+  //   }
+  // };
 
   return (
     <section className="w-full py-16 mt-20 bg-gradient-to-b from-[#0259DE] to-[#1294D4] text-white">
@@ -89,9 +89,13 @@ const PricingSection = () => {
 
         <div className="mt-10">
 
-          <button onClick={handleBuy} className="px-8 py-3 bg-orange-500 text-white font-bold rounded-2xl shadow-lg hover:bg-orange-600 transition">
+          {/* <button onClick={handleBuy} className="px-8 py-3 bg-orange-500 text-white font-bold rounded-2xl shadow-lg hover:bg-orange-600 transition">
             Beli Paket
-          </button>
+          </button> */}
+
+          <a href="/payment" className="px-8 py-3 bg-orange-500 text-white font-bold rounded-2xl shadow-lg hover:bg-orange-600 transition">
+            Beli Paket
+          </a>
         </div>
       </div>
     </section>

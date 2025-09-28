@@ -5,7 +5,6 @@ import witaIMG from "../../../assets/images/Wita.jpg";
 import kireiIMG from "../../../assets/images/Kirei.png";
 import zaraIMG from "../../../assets/images/Zara.jpg";
 import arielIMG from "../../../assets/images/ariel.png";
-import rafiIMG from "../../../assets/images/Rafi.jpg";
 import daffaIMG from "../../../assets/images/Daffa.png";
 import rakhaIMG from "../../../assets/images/Rakha.png";
 
