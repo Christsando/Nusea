@@ -1,0 +1,16 @@
+.detailOrderPageContainer {
+    min-height: 100vh;  
+    padding: 100px 50px 50px 50px; 
+}
+.detailOrderPageContainer h1 {
+    text-align: center;
+    /* margin-top: 90px; */
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+.detailStatusImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

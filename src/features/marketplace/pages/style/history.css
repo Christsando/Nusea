@@ -1,0 +1,12 @@
+.historyPage {
+    min-height: 100vh;
+}
+.historyPage .historyContainer {
+    padding: 100px 100px 50px 100px;
+    min-height: 100vh;
+}
+.historyPage .historyContainer h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
