@@ -12,7 +12,7 @@ export default function Hero() {
           </h1>
         </div>
         <div className="px-20 md:px-10 lg:px-60 bg-black bg-opacity-10 w-full h-screen flex flex-col md:items-center lg:items-start justify-center">
-          <a className="mt-10 px-6 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg hover:bg-orange-600 cursor-pointer">
+          <a href="#service" className="mt-10 px-6 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg hover:bg-orange-600 cursor-pointer">
             Pelajari Selengkapnya
           </a>
         </div>

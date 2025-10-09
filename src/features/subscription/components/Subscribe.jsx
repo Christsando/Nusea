@@ -17,9 +17,9 @@ const SubscribeSection = () => {
         </div>
 
         <div className="w-full md:w-1/2 text-white p-8 rounded-lg flex flex-col md:flex-row items-center justify-end gap-6">
-          <button className="bg-[#ff5b44] hover:bg-[#e64a34] transition px-6 py-3 rounded-full font-bold shadow-md">
+          <a href="/subscription" className="bg-[#ff5b44] hover:bg-[#e64a34] transition px-6 py-3 rounded-full font-bold shadow-md">
             Subscribe
-          </button>
+          </a>
         </div>
 
       </div>
