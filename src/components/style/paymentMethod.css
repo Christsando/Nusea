@@ -17,7 +17,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 30px;
-  width: 400px;
+  width: 600px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
@@ -48,6 +48,10 @@
 }
 
 /* icons */
+.icons {
+  display: flex;
+  gap: 5px;
+}
 .icons img {
   height: 20px;
   margin-left: 5px;
@@ -68,8 +72,11 @@
 
 /* qris */
 .qrisBox {
+  display: flex;
   text-align: center;
   margin: 15px 0;
+  align-items: center;
+  justify-content: center;
 }
 .qrisImage {
   width: 200px;

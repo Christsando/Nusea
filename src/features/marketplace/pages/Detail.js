@@ -1,107 +1,164 @@
-import './App.css';
-import { useParams } from "react-router-dom";
+import "./App.css";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Image from '../../../assets/images/crab.png';
-import { Star, Heart } from "lucide-react";
-import Button from '@mui/material/Button';
-import ButtonQuantity from '../components/ButtonQuantity';
-import Review from "../components/Review"
-import { Truck, Package } from "lucide-react";
-import './App.css';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
+import { Star, Heart, Truck, Package } from "lucide-react";
+import { products, productsUnggulan } from "../data/products";
+import Button from "@mui/material/Button";
+import ButtonQuantity from "../components/ButtonQuantity";
+import Review from "../components/Review";
+import Navbar from "../../../components/Navbar";
+import Footer from "../../../components/Footer";
 
 function Detail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    // const [product, setProduct] = useState(null);
+    const dispatch = useDispatch();
+
+    const [product, setProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1);
+
+    // Ambil produk berdasarkan ID
+    useEffect(() => {
+        const allProducts = [...productsUnggulan, ...products];
+        const foundProduct = allProducts.find(p => p.id === parseInt(id));
+        setProduct(foundProduct);
+    }, [id]);
+
+    // Ubah title browser sesuai produk
+    useEffect(() => {
+        if (product) {
+            document.title = `Nusea | ${product.name}`;
+        } else {
+            document.title = "Nusea | Product - Loading...";
+        }
+    }, [product]);
+
+    // Jika produk belum ketemu
+    if (!product) {
+        return (
+            <div className="DetailApp">
+                <Navbar />
+                <div style={{ textAlign: "center", padding: "50px" }}>
+                    <p>Loading...</p>
+                </div>
+                <Footer />
+            </div>
+        );
+    }
+
+    const handleAddToCart = () => {
+        dispatch(addToCart({ product, quantity }));
+        navigate("/market/cart");
+    };
+
+    const handleClick = () => {
+        navigate(`/market/product/${id}/ulasan`);
+    };
+
+    const handleBuyClick = () => {
+        dispatch(addToCart({ product, quantity }));
+        navigate(`/market/cart/payment`);
+    };
 
     return (
         <div className="DetailApp">
-            <title>Nusea | Detail Produk</title>
-
             <main>
                 <Navbar />
-                <div className='upperContainer'>
+                <div className="upperContainer">
                     {/* image section */}
-                    <div className='imageContainer'>
-                        <img src={Image} alt='ImageHolder' />
+                    <div className="imageContainer">
+                        <img src={product.image} alt={product.name} />
                     </div>
 
                     {/* detail section */}
-                    <div className='detailContainer'>
-                        
-                        {/* change with API if already have */}
-                        <div className='productNameContainer'>
-                            {/* product name */}
-                            <h2>Keptingan Rajungan</h2>
-                            <Heart className="heartIcon" />
+                    <div className="detailContainer">
+                        <div className="productNameContainer">
+                            <h2>{product.name}</h2>
                         </div>
 
-                        <div className='priceAndRatingContainer'>
-                            <p>Rp 180.000,00 / Kg | </p>
+                        <div>
+                            <div className="priceAndRatingContainer">
+                                <p>{product.price} | </p>
 
-                            <div className="ratingContainer">
-                                <Star className="starIcon" />
-                                <Star className="starIcon" />
-                                <Star className="starIcon" />
-                                <Star className="starIcon" />
-                                <Star className="starIcon" />
-
-                                <span className="ratingNumber">(32 ulasan)</span>
+                                <div className="ratingContainer">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="starIcon" />
+                                    ))}
+                                    <span className="ratingNumber">(32 ulasan)</span>
+                                </div>
                             </div>
+
+                            <hr className="lineSeparator" />
                         </div>
 
-                        {/* create line separator */}
-                        <hr className='lineSeparator' />
+                        <div className="separatorDescAndButton">
+                            {/* description section */}
+                            <div className="descriptionContainer">
+                                <p>{product.description}</p>
 
-                        {/* description section */}
-                        <div className='descriptionContainer'>
-                            <p>
-                                Kepiting rajungan adalah jenis kepiting yang banyak ditemukan di perairan Asia Tenggara, termasuk Indonesia. Kepiting ini dikenal dengan cangkangnya yang berwarna biru kehijauan dan dagingnya yang lezat. Rajungan biasanya hidup di dasar laut berlumpur atau berpasir, dan sering kali ditemukan di muara sungai atau daerah pesisir.
-                            </p>
+                                <p className="keunggulanProduk">
+                                    Keunggulan Produk : <br />
+                                    <ul className="list-disc list-inside">
+                                        {product.keunggulan?.map((item, index) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </p>
+                            </div>
 
-                            {/* keunggulan produk */}
-                            <p className='keunggulanProduk'>
-                                Keunggulan Produk: <br />
-                                - Daging yang Manis dan Gurih.<br />
-                                - Tekstur yang Lembut<br />
-                                - Kaya Nutrisi<br />
-                                - Serbaguna dalam Masakan
-                            </p>
-                        </div>
+                            {/* pengiriman */}
+                            <div className="couponContainer">
+                                <span>
+                                    <Truck size={24} className="couponIcon" /> Gratis Ongkir untuk
+                                    pembelian di atas Rp500.000
+                                </span>
+                                <span>
+                                    <Package size={24} className="couponIcon" /> Estimasi
+                                    pengiriman: 6-8 hari kerja
+                                </span>
+                            </div>
 
-                        <div className='couponContainer'>
-                            <span><Truck size={24} className="couponIcon" />Gratis Ongkir untuk pembelian di atas Rp500.000</span>
-                            <span><Package size={24} className="couponIcon" />Estimasi pengiriman: 6-8 hari kerja</span>
-                        </div>
-
-                        <div className='buttonContainer'>
-                            <div className='addToCartContainer'>
-                                <ButtonQuantity />
-                                <Button variant="contained" onClick={() => navigate("/market/cart")} color="error" sx={{ borderRadius: 20 }} className='addToCartButton'>
-                                    Tambah ke Keranjang
+                            {/* tombol */}
+                            <div className="buttonsContainer">
+                                <div className="addToCartContainer">
+                                    <ButtonQuantity value={quantity} onChange={setQuantity} />
+                                    <Button
+                                        variant="contained"
+                                        onClick={handleAddToCart}
+                                        color="error"
+                                        sx={{ borderRadius: 20 }}
+                                        className="addToCartButton"
+                                    >
+                                        Tambah ke Keranjang
+                                    </Button>
+                                </div>
+                                <Button
+                                    variant="outlined"
+                                    sx={{ borderRadius: 20 }}
+                                    className="buyNowButton"
+                                    onClick={handleBuyClick}
+                                >
+                                    Beli Sekarang
                                 </Button>
                             </div>
-                            <Button variant="outlined" sx={{ borderRadius: 20 }} className='buyNowButton'>
-                                Beli Sekarang
-                            </Button>
                         </div>
                     </div>
                 </div>
 
                 {/* ulasan user */}
-                <div className='ulasanContainer'>
-                    <h3>Rating dan Ulasan </h3>
-                    <div className='listUlasanContainer'>
+                <div className="ulasanContainer">
+                    <h3>Rating dan Ulasan</h3>
+                    <div className="listUlasanContainer">
                         <Review />
                         <Review />
-                        <a href='#'>Lihat lebih banyak ulasan &gt;</a>
+                        <a onClick={handleClick}>Lihat lebih banyak ulasan &gt;</a>
                     </div>
                 </div>
             </main>
-            <Footer/>
+
+            <Footer />
         </div>
     );
 }
