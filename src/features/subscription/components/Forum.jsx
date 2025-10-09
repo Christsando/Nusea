@@ -30,13 +30,13 @@ const FaqSection = () => {
 
   const handleSubmit = () => {
     if (question.trim() !== "") {
-      setPaymentSuccess(true); // buka popup
-      setQuestion(""); // kosongkan input setelah kirim
+      setPaymentSuccess(true);
+      setQuestion(""); 
     }
   };
 
   const handleClose = () => {
-    setPaymentSuccess(false); // tutup popup
+    setPaymentSuccess(false);
   };
 
   return (
