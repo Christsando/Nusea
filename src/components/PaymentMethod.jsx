@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./style/paymentMethod.css";
 
-const PaymentMethod = ({ onClose }) => {
+const PaymentMethod = ({ onClose ,  onSuccess }) => {
   const [method, setMethod] = useState("qris"); // default Qris
 
   return (
@@ -58,7 +58,7 @@ const PaymentMethod = ({ onClose }) => {
 
         {/* Button */}
         <div className="actions">
-          {method === "card" && <button className="payBtn">Pay Now</button>}
+          {method === "card" && <button className="payBtn" onClick={onSuccess}>Pay Now</button>}
           <button className="closeBtn" onClick={onClose}>
             Close
           </button>

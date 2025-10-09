@@ -1,8 +1,13 @@
+// PricingSection.jsx
 import React, { useState } from "react";
 import checkIcon from "../../../assets/check_icon.png";
+import PaymentMethod from "../../../components/PaymentMethod";
+import PaymentSuccessPopUp from "../../../components/PaymentSuccessPopUp";
 
 const PricingSection = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [showPaymentMethod, setShowPaymentMethod] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const plans = [
     {
@@ -40,15 +45,6 @@ const PricingSection = () => {
     },
   ];
 
-  // const handleBuy = () => {
-  //   if (selectedPlan) {
-  //     alert(`Kamu memilih: ${selectedPlan.name}`);
-  //     // di sini bisa diarahkan ke halaman checkout atau API call
-  //   } else {
-  //     alert("Silakan pilih paket dulu sebelum membeli 😊");
-  //   }
-  // };
-
   return (
     <section className="w-full py-16 mt-20 bg-gradient-to-b from-[#0259DE] to-[#1294D4] text-white">
       <div className="container mx-auto px-6 md:px-0 text-center">
@@ -61,15 +57,23 @@ const PricingSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto my-20">
           {plans.map((plan) => (
-            <div key={plan.id} onClick={() => setSelectedPlan(plan)}
-              className={`group cursor-pointer group p-6 rounded-xl shadow-lg flex flex-col justify-between hover:scale-y-110 
+            <div
+              key={plan.id}
+              onClick={() => setSelectedPlan(plan)}
+              className={`group cursor-pointer p-6 rounded-xl shadow-lg flex flex-col justify-between hover:scale-y-110 
                 ${
                   selectedPlan?.id === plan.id
                     ? "bg-white text-gray-800"
                     : "bg-gradient-to-b from-blue-400 to-blue-500 text-white"
                 }`}
             >
-              <h3 className={`text-xl font-bold mb-6 transition-colors  ${selectedPlan?.id === plan.id ? "text-blue-600" : "text-white"}`}>
+              <h3
+                className={`text-xl font-bold mb-6 transition-colors ${
+                  selectedPlan?.id === plan.id
+                    ? "text-blue-600"
+                    : "text-white"
+                }`}
+              >
                 {plan.name}
               </h3>
 
@@ -88,16 +92,31 @@ const PricingSection = () => {
         </div>
 
         <div className="mt-10">
-
-          {/* <button onClick={handleBuy} className="px-8 py-3 bg-orange-500 text-white font-bold rounded-2xl shadow-lg hover:bg-orange-600 transition">
-            Beli Paket
-          </button> */}
-
-          <a href="/payment" className="px-8 py-3 bg-orange-500 text-white font-bold rounded-2xl shadow-lg hover:bg-orange-600 transition">
-            Beli Paket
-          </a>
+          <button
+            onClick={() => setShowPaymentMethod(true)}
+            className="px-8 py-3 bg-orange-500 text-white font-bold rounded-2xl shadow-lg hover:bg-orange-600 transition"
+            disabled={!selectedPlan}
+          >
+            {selectedPlan ? "Beli Paket" : "Pilih Paket Dulu"}
+          </button>
         </div>
       </div>
+
+      {/* PaymentMethod PopUp */}
+      {showPaymentMethod && (
+        <PaymentMethod
+          onClose={() => setShowPaymentMethod(false)}
+          onSuccess={() => {
+            setShowPaymentMethod(false);
+            setShowSuccessPopup(true);
+          }}
+        />
+      )}
+
+      {/* PaymentSuccessPopUp */}
+      {showSuccessPopup && (
+        <PaymentSuccessPopUp onClose={() => setShowSuccessPopup(false)} />
+      )}
     </section>
   );
 };

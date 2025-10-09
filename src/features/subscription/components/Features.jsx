@@ -1,5 +1,5 @@
 import React from "react";
-import TopImage from "../../../assets/images/Fitur.png"; // gambar latar belakang
+import TopImage from "../../../assets/images/Fitur.png";
 import BottomImage from "../../../assets/images/Map.png"; 
 
 const FeaturesBackground = () => {

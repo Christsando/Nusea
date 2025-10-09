@@ -1,17 +1,56 @@
 import React, { useState } from "react";
 import logo from "../../../../assets/logo.png";
-import googleIcon from "../../../../assets/Google-icon.png"
+import googleIcon from "../../../../assets/Google-icon.png";
 
 const LoginForm = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loggedUser, setLoggedUser] = useState(null);
 
-  const [showPopup, setShowPopup] = useState(false); // default popup tidak tampil
-    const [role, setRole] = useState(null);
-  
-    const handleSignupClick = (e) => {
-      e.preventDefault();
-      setShowPopup(true); // tampilkan popup ketika klik Sign Up
+  // Hardcode beberapa user
+  const users = [
+    {
+      email: "admin@gmail.com",
+      password: "12345",
+      role: "admin",
+    },
+    {
+      email: "user@gmail.com",
+      password: "abcde",
+      role: "user",
+    },
+    {
+      email: "nelayan@gmail.com",
+      password: "ikanlaut",
+      role: "nelayan",
+    },
+  ];
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Cari user yang cocok
+    const foundUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (foundUser) {
+      setLoggedUser(foundUser);
+      setShowPopup(true);
+    } else {
+      alert("Email atau password salah!");
+    }
+  };
+
+  const handleGoogleLogin = () => {
+    const googleUser = {
+      email: "googleuser@gmail.com",
+      role: "googleUser",
     };
-  
+    setLoggedUser(googleUser);
+    setShowPopup(true);
+  };
 
   return (
     <div className="w-full md:w-1/2 flex items-center justify-center bg-white">
@@ -22,12 +61,25 @@ const LoginForm = () => {
         <h2 className="text-center text-xl font-semibold mb-6">
           Selamat datang kembali!
         </h2>
-        <form onSubmit={handleSignupClick} className="space-y-4 flex flex-col">
-          <label>Login</label>
-          <input type="email" placeholder="Email or phone number" className="w-full border p-3 rounded-md"/>
+
+        <form onSubmit={handleLogin} className="space-y-4 flex flex-col">
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border p-3 rounded-md bg-gray-100"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
           <label>Password</label>
-          <input type="password" placeholder="Enter password" className="w-full border p-3 rounded-md"/>
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full border p-3 rounded-md bg-gray-100"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           <div className="flex items-center justify-between text-sm">
             <label>
@@ -38,14 +90,23 @@ const LoginForm = () => {
             </a>
           </div>
 
-          <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-md font-semibold">
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white p-3 rounded-md font-semibold"
+          >
             Sign in
           </button>
 
-          <button type="submit" className="w-full border bg-[#333333] text-white flex justify-center items-center gap-2 p-3 rounded-md">
-            <span><img src={googleIcon}></img></span> Or sign in with Google
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="w-full border bg-[#333333] text-white flex justify-center items-center gap-2 p-3 rounded-md"
+          >
+            <span>
+              <img src={googleIcon} alt="Google" />
+            </span>
+            Or sign in with Google
           </button>
-
         </form>
 
         <p className="text-sm text-center mt-4">
@@ -54,17 +115,26 @@ const LoginForm = () => {
             Sign up now
           </a>
         </p>
-        
       </div>
-      {showPopup && (
+
+      {/* Popup tanpa validasi role */}
+      {showPopup && loggedUser && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="p-8 rounded-lg shadow-lg text-center relative max-w-md w-full">
-            <h2 className="text-xl font-semibold mb-6 text-white">Sign In Sebagai?</h2>
-            <div className="flex justify-center gap-6">
-              <a href="/nelayan-home" className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100">
+            <h2 className="text-xl font-semibold mb-6 text-white">
+              Sign In Sebagai?
+            </h2>
+            <div className="flex justify-center flex-wrap gap-6">
+              <a
+                href="/nelayan-home"
+                className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100"
+              >
                 Nelayan
               </a>
-              <a href="/" className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100">
+              <a
+                href="/"
+                className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100"
+              >
                 Pelanggan
               </a>
             </div>
