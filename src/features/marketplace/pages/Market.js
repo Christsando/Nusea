@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import { productsUnggulan, products } from "../data/products";
+import Subscribe from "../components/Subscribe";
+import Forum from "../components/Forum";
 
 
 function App() {
@@ -95,7 +97,8 @@ function App() {
         </div>
 
       </main>
-
+      <Subscribe/>
+      <Forum/>
       <Footer/>
     </div>
   );
