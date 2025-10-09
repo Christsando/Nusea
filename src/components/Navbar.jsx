@@ -1,6 +1,7 @@
 import logo from "../assets/logo.png";
 import { Search, ShoppingCart, History, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
