@@ -37,7 +37,6 @@ function App() {
     return (
         <Router>
             <Routes>
-
                 <Route path="/" element={<Home />} />
                 <Route path="/nelayan-home" element={<NelayanHome />} />
                 <Route path="/subscription" element={<Subscription />} />
