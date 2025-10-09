@@ -2,9 +2,16 @@
 
 Nusea adalah platform pemberdayaan nelayan-nelayan kecil di Indonesia yang menyediakan kuis dan artikel tentang cara menghindari polusi saat pengadaan dan pelestarian ikan untuk berkelanjutan bisnis. Nusea juga mempunyai fitur marketplace dan langganan bulanan produk guna memperkuat daya ekspor nelayan-nelayan kecil di Indonesia
 
-## Available Scripts
+## People in Nusea Project
 
-In the project directory, you can run:
+- Frontend Developer :
+Ariel Christsando Yudistya Putra
+Wisnu
+Rakha
+
+- UI/UX :
+Wita
+Zahra
 
 ### `npm start`
 
