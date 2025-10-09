@@ -9,11 +9,12 @@
     border: solid 1px #eee;
 }
 .cartHeader {
-    background-color: #0066e6; /* biru */
+    background-color: #0066e6;
+    /* biru */
     color: white;
 }
 .cartHeader th {
-    padding-inline: 50px ;
+    padding-inline: 50px;
     border: solid 1px #0259DE;
     padding-inline: 70px;
     font-size: 16px;
@@ -31,11 +32,19 @@
     border-bottom: solid 1px #eee;
 }
 .cartTable .imageColumn {
-   padding-inline: 100px;
+    padding-inline: 100px;
 }
 .cartTable .quantityCell {
     padding-inline: 30px;
 }
 .cartTable .totalCell {
     padding-inline: 30px;
+}
+.productImg {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+    vertical-align: middle;
 }

@@ -20,6 +20,7 @@ import ArticleSaved from "./features/article/pages/ArticleSaved";
 import Payment from "./features/marketplace/pages/Payment";
 import Status from "./features/marketplace/pages/Status";
 import History from "./features/marketplace/pages/History";
+import DetailUlasan from "./features/marketplace/pages/DetailUlasan"
 
 
 function App() {
@@ -43,13 +44,14 @@ function App() {
                 <Route path="/subscription/payment" element={<SubscriptionPayment />}/>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/product/:id" element={<Detail />} />
-                <Route path="/products" element={<Products />} />
+                <Route path="/market/product/:id" element={<Detail />} />
+                <Route path="/market/products" element={<Products />} />
                 <Route path="/market" element={<Market />} />
                 <Route path="/market/cart" element={<Cart />} />
                 <Route path="/market/cart/payment" element={<Payment />} />
-                <Route path="/status" element={<Status />} />
+                <Route path="/market/status" element={<Status />} />
                 <Route path="/market/history" element={<History />} />
+                <Route path="/market/product/:id/ulasan" element={<DetailUlasan />} />
                 <Route path="/article" element={<Article />} />
                 <Route path="/article/:articleId" element={<ArticleDetail savedArticle={savedArticle} toggleBookmark={toggleBookmark} />} />
                 <Route path="/saved-article" element={<ArticleSaved savedArticle={savedArticle} />} />

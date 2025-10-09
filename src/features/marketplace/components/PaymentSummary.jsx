@@ -1,17 +1,31 @@
 import React from "react";
 import "./style/paymentSummary.css";
+import { useSelector } from "react-redux";
 
-const PaymentSummary = () => {
-    const items = [
-        { id: 1, name: "Kepiting Rajungan", qty: 1, price: 200000 },
-        { id: 2, name: "Udang", qty: 1, price: 120000 },
-        { id: 3, name: "Cumi-Cumi", qty: 1, price: 90000 },
-        { id: 4, name: "Ikan Tuna", qty: 1, price: 100000 },
-    ];
+const PaymentSummary = ({ discount = 0 }) => {
+    const items = useSelector((state) => state.cart.items);
 
-    const subtotal = items.reduce((acc, item) => acc + item.price * item.qty, 0);
+    if (items.length === 0) {
+        return (
+            <div className="summaryContainer">
+                <div className="summaryHeader">
+                    <h3>Pembayaran</h3>
+                </div>
+                <p style={{ textAlign: "center", padding: "20px" }}>
+                    Keranjang kosong — tidak ada produk untuk dibayar.
+                </p>
+            </div>
+        );
+    }
+
+    const subtotal = items.reduce((acc, item) => {
+        const priceNumber = parseInt(item.price.toString().replace(/[^\d]/g, ""));
+        return acc + priceNumber * item.quantity;
+    }, 0);
+
     const ongkir = 0;
-    const total = subtotal + ongkir;
+    const diskonNominal = (subtotal * discount) / 100;
+    const total = subtotal - diskonNominal + ongkir;
 
     return (
         <div className="summaryContainer">
@@ -27,21 +41,36 @@ const PaymentSummary = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {items.map(item => (
-                        <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.qty.toString().padStart(2, "0")}</td>
-                            <td>Rp{item.price.toLocaleString("id-ID")}</td>
-                        </tr>
-                    ))}
+                    {items.map((item) => {
+                        const priceNumber = parseInt(item.price.toString().replace(/[^\d]/g, ""));
+                        return (
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>{item.quantity.toString().padStart(2, "0")}</td>
+                                <td>Rp{priceNumber.toLocaleString("id-ID")}</td>
+                            </tr>
+                        );
+                    })}
+
                     <tr className="summaryRow">
                         <td colSpan="2">SUBTOTAL</td>
                         <td>Rp{subtotal.toLocaleString("id-ID")}</td>
                     </tr>
+
+                    <tr className="summaryRow">
+                        <td colSpan="2">DISKON</td>
+                        <td>
+                            {discount > 0
+                                ? `-${discount}% (Rp${diskonNominal.toLocaleString("id-ID")})`
+                                : "-"}
+                        </td>
+                    </tr>
+
                     <tr className="summaryRow">
                         <td colSpan="2">ONGKIR</td>
-                        <td>{ongkir}</td>
+                        <td>{ongkir === 0 ? "Gratis" : `Rp${ongkir.toLocaleString("id-ID")}`}</td>
                     </tr>
+
                     <tr className="summaryRow total">
                         <td colSpan="2">TOTAL</td>
                         <td>Rp{total.toLocaleString("id-ID")}</td>

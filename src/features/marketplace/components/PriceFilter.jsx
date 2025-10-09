@@ -1,12 +1,21 @@
 import "./style/component.css";
 
-const PriceFilter = ({ type, isActive, onClick }) => {
+const PriceFilter = ({ selectedPrice, onPriceSelect }) => {
     const priceRanges = [
         { id: "p1", label: "Rp20.000 - Rp50.000" },
         { id: "p2", label: "Rp50.000 - Rp100.000" },
         { id: "p3", label: "Rp100.000 - Rp200.000" },
-        { id: "p4", label: "Rp200.000+" }
+        { id: "p4", label: "Rp200.000+" },
     ];
+
+    const handleChange = (id) => {
+        // kalau klik ulang range yang sama → hapus filter (set null)
+        if (selectedPrice === id) {
+            onPriceSelect(null);
+        } else {
+            onPriceSelect(id);
+        }
+    };
 
     return (
         <div className="filterContainer">
@@ -16,7 +25,12 @@ const PriceFilter = ({ type, isActive, onClick }) => {
             <div className="typeFilterContainer">
                 {priceRanges.map((range) => (
                     <div key={range.id} className="priceFilterItem">
-                        <input type="checkbox" id={range.id} />
+                        <input
+                            type="checkbox"
+                            id={range.id}
+                            checked={selectedPrice === range.id}
+                            onChange={() => handleChange(range.id)}
+                        />
                         <label htmlFor={range.id}>{range.label}</label>
                     </div>
                 ))}

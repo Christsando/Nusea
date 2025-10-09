@@ -1,6 +1,6 @@
 import "./style/component.css";
 
-const TypeFilter = ({ type, isActive, onClick }) => {
+const TypeFilter = ({ activeCategory, onCategorySelect }) => {
     const categories = [
         "Cumi-Cumi",
         "Ikan",
@@ -10,15 +10,28 @@ const TypeFilter = ({ type, isActive, onClick }) => {
         "Lobster"
     ];
 
+    const handleSelect = (category) => {
+        // kalau klik ulang kategori yang sama → hapus filter
+        if (activeCategory === category) {
+            onCategorySelect(null);
+        } else {
+            onCategorySelect(category);
+        }
+    };
+
     return (
         <div className="filterContainer">
             <div className="sectionContainer">
                 <p>Category</p>
             </div>
             <div className="typeFilterContainer">
-                <ul class="categoryList">
-                    {categories.map((category, index) => (
-                        <li key={index}>
+                <ul className="categoryList">
+                    {categories.map((category) => (
+                        <li
+                            key={category}
+                            className={activeCategory === category ? "active" : ""}
+                            onClick={() => handleSelect(category)}
+                        >
                             {category} <i className="fas fa-chevron-down"></i>
                         </li>
                     ))}
