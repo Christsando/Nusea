@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Nusea
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nusea adalah platform pemberdayaan nelayan-nelayan kecil di Indonesia yang menyediakan kuis dan artikel tentang cara menghindari polusi saat pengadaan dan pelestarian ikan untuk berkelanjutan bisnis. Nusea juga mempunyai fitur marketplace dan langganan bulanan produk guna memperkuat daya ekspor nelayan-nelayan kecil di Indonesia
 
 ## Available Scripts
 
