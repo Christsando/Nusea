@@ -25,10 +25,10 @@ const Footer = () => {
                 <h3 className="text-blue-600 font-bold text-3xl mb-3">Media Sosial</h3>
             </div>
             <div className="flex gap-5 w-1/2 items-center justify-center">
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href="https://www.instagram.com/nusea_id?igsh=aWkzYWM5Z2NnMmZ2" target="_blank" rel="noreferrer">
                     <img src={instagramIcon} alt="Instagram" className="w-8 h-8 hover:opacity-80 transition" />
                 </a>
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href="https://www.tiktok.com/@nusea_id?_t=ZS-90QcsSywM35&_r=1" target="_blank" rel="noreferrer">
                     <img src={tiktokIcon} alt="TikTok" className="w-8 h-8 hover:opacity-80 transition" />
                 </a>
                 <a href="#" target="_blank" rel="noreferrer">
@@ -37,7 +37,7 @@ const Footer = () => {
                 <a href="#" target="_blank" rel="noreferrer">
                     <img src={facebookIcon} alt="Facebook" className="w-8 h-8 hover:opacity-80 transition" />
                 </a>
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/6285349699300" target="_blank" rel="noreferrer">
                     <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8 hover:opacity-80 transition" />
                 </a>
             </div>
