@@ -1,5 +1,5 @@
 import Footer from "../../../components/Footer";
-import Navbar from "../../../components/NavbarLogin";
+import UserNavbar from "../../../components/UserNavbar";
 import QuizSection from "../components/QuizSection";
 import { quizData } from "../datas/DataEdu";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ function EduCourse() {
 
     return (
         <div className="bg-white min-h-screen">
-            <Navbar />
+            <UserNavbar />
             <main>
                 <section className="relative flex items-end justify-center h-[500px] bg-cover bg-center text-white text-center" style={{ backgroundImage: `url(${courseQuiz.image})` }}>
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent"></div>

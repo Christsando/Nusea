@@ -1,8 +1,8 @@
 import { useState } from "react";
 import ArticleCard from "../components/ArticleCard";
-import Navbar from "../../../components/NavbarLogin";
 import { latestArticle, recentArticle } from "../datas/DataArticle";
 import Footer from "../../../components/Footer";
+import UserNavbar from "../../../components/UserNavbar";
 
 const category = ["Perikanan", "Ekspor & Pasar Global", "Inovasi Nelayan", "Pengalaman Nelayan"];
 
@@ -12,7 +12,7 @@ function Article() {
 
     return (
         <div className="bg-gray-50 min-h-screen">
-            <Navbar />
+            <UserNavbar />
             <div className="container mx-auto px-40 py-16 md:py-20 mt-10">
                 <section className="text-center mb-12 max-w-4xl mx-auto">
                     <h1 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4 leading-tight">Dari Laut Nusantara ke Pasar Dunia, Dimulai dari Pengetahuan.</h1>

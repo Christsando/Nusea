@@ -1,4 +1,3 @@
-import Navbar from "../../../components/NavbarLogin";
 import icon1 from "../../../assets/images/article/Circle Avatar.png";
 import icon2 from "../../../assets/images/article/Circle Avatar1.png";
 import icon3 from "../../../assets/images/article/Circle Avatar2.png";
@@ -6,6 +5,7 @@ import icon4 from "../../../assets/images/article/Circle Avatar3.png";
 import { useNavigate } from "react-router-dom";
 import { courseData } from "../datas/DataEdu";
 import Footer from "../../../components/Footer";
+import UserNavbar from "../../../components/UserNavbar";
 
 const educateData = [
     { icon: icon1, title: "Ekspor & Pasar Global", caption: "Belajar langkah demi langkah untuk menembus pasar internasional" },
@@ -22,7 +22,7 @@ function EduPage() {
 
     return (
         <div className="bg-white text-gray-800 h-full">
-            <Navbar />
+            <UserNavbar />
             <main className="mt-10">
                 <section className="py-20">
                     <div className="container mx-auto px-6 text-center">

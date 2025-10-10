@@ -1,5 +1,5 @@
 import Footer from "../../../components/Footer";
-import Navbar from "../../../components/NavbarLogin";
+import UserNavbar from "../../../components/UserNavbar";
 import ArticleCard from "../components/ArticleCard";
 import { allArticle } from "../datas/DataArticle";
 
@@ -8,7 +8,7 @@ function ArticleSaved({ savedArticle }) {
 
     return (
         <div>
-            <Navbar />
+            <UserNavbar />
             <div className="max-w-8xl mx-auto px-4 py-8">
                 <h1 className="text-4xl font-extrabold text-blue-700 mb-12 mt-20 text-center">Artikel Tersimpan</h1>
 
