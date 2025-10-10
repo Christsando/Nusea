@@ -11,6 +11,12 @@ export default function Navbar() {
   const handleHistory = () => {
     navigate("/market/history");
   };
+  const handleMarket = () => {
+    navigate("/market");
+  };
+  const handleHome = () => {
+    navigate("/");
+  };
 
   return (
     <nav className="bg-white/60 shadow-md fixed w-full top-0 z-50 backdrop-blur-md">
@@ -23,14 +29,14 @@ export default function Navbar() {
         {/* Menu */}
         <div className="flex items-center space-x-6">
           <a
-            href="#home"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
+            onClick={handleHome}
+            className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer"
           >
             Home
           </a>
           <a
-            href="#shop"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
+            onClick={handleMarket}
+            className="text-gray-800 hover:text-blue-600 transition-colors cursor-pointer"
           >
             Shop
           </a>

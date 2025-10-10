@@ -1,4 +1,3 @@
-// PricingSection.jsx
 import React, { useState } from "react";
 import checkIcon from "../../../assets/check_icon.png";
 import PaymentMethod from "../../../components/PaymentMethod";
@@ -102,7 +101,6 @@ const PricingSection = () => {
         </div>
       </div>
 
-      {/* PaymentMethod PopUp */}
       {showPaymentMethod && (
         <PaymentMethod
           onClose={() => setShowPaymentMethod(false)}
@@ -113,7 +111,6 @@ const PricingSection = () => {
         />
       )}
 
-      {/* PaymentSuccessPopUp */}
       {showSuccessPopup && (
         <PaymentSuccessPopUp onClose={() => setShowSuccessPopup(false)} />
       )}
