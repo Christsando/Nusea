@@ -21,7 +21,7 @@ const UserNavbar = () => {
         <input type="text" placeholder="Search" className="px-3 py-2 border lg:w-1/4 rounded-md focus:outline-none focus:ring focus:ring-blue-300"/>
 
         <div className="flex items-center gap-6">
-            <a href="">
+            <a href="mailto:contact@nusea.com">
                 <img src={emailDrop} />
             </a>
             <div className="flex flex-col items-center">
