@@ -1,22 +1,18 @@
-import { useState } from "react";
 import "./style/component.css";
-// add new library untuk react-redux
 
-function ButtonQuantity({ className = "" }) {
-  const [quantity, setQuantity] = useState(1);
-
+function ButtonQuantity({ value, onChange }) {
   const handleDecrease = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
+    if (value > 1) onChange(value - 1);
   };
 
   const handleIncrease = () => {
-    setQuantity(quantity + 1);
+    onChange(value + 1);
   };
 
   return (
     <div className="ButtonQuantity">
       <button onClick={handleDecrease}>−</button>
-      <span>{quantity}</span>
+      <span>{value}</span>
       <button onClick={handleIncrease}>+</button>
     </div>
   );

@@ -1,45 +1,25 @@
+import { useSelector } from "react-redux";
+import AddReview from "./AddReview";
 import "./style/historyTable.css";
-
-const historyData = [
-  {
-    orderNo: 2133,
-    image: "kepiting.png",
-    name: "Kepiting Rajungan",
-    status: "Sudah Sampai",
-    tracking: "Rating",
-    date: "01-09-2025",
-    price: "Rp200.000",
-  },
-  {
-    orderNo: 2133,
-    image: "udang.png",
-    name: "Udang",
-    status: "Sudah Sampai",
-    tracking: "Rating",
-    date: "01-09-2025",
-    price: "Rp120.000",
-  },
-  {
-    orderNo: 2133,
-    image: "cumi.png",
-    name: "Cumi-Cumi",
-    status: "Sudah Sampai",
-    tracking: "Rating",
-    date: "01-09-2025",
-    price: "Rp90.000",
-  },
-  {
-    orderNo: 2133,
-    image: "tuna.png",
-    name: "Ikan Tuna",
-    status: "Sudah Sampai",
-    tracking: "Rating",
-    date: "23-07-2021",
-    price: "Rp100.000",
-  },
-];
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ tambahkan ini
 
 const HistoryTable = () => {
+  const orders = useSelector((state) => state.orders.list);
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const navigate = useNavigate(); // ✅ hook untuk navigasi
+
+  const handleRatingClick = (item) => {
+    setSelectedProduct(item);
+    setIsReviewOpen(true);
+  };
+
+  // ✅ fungsi buat Re-Order (ke halaman detail produk)
+  const handleReorder = (productId) => {
+    navigate(`/market/product/${productId}`);
+  };
+
   return (
     <div>
       <table className="historyTable">
@@ -48,48 +28,64 @@ const HistoryTable = () => {
             <th>No Order</th>
             <th>Item</th>
             <th>Status</th>
-            <th>ID Pelacakan</th>
-            <th>Tanggal Pengiriman</th>
+            <th>Ulasan</th>
+            <th>Tanggal</th>
             <th>Harga</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {historyData.map((item, index) => (
-            <tr key={index}>
-              {/* Order Number */}
-              <td>{item.orderNo}</td>
-
-              {/* Image & Name */}
-              <td className="itemCell">
-                <img src={item.image} alt={item.name} />
-                <span>{item.name}</span>
-              </td>
-
-              {/* Status */}
-              <td>
-                <span className="status success">{item.status}</span>
-              </td>
-
-              {/* Tracking */}
-              <td>
-                <a href="#">{item.tracking}</a>
-              </td>
-
-              {/* Date */}
-              <td>{item.date}</td>
-
-              {/* Price */}
-              <td>{item.price}</td>
-
-              {/* Re-Order */}
-              <td>
-                <button className="reorderBtn">Re-Order →</button>
+          {orders.length === 0 ? (
+            <tr>
+              <td colSpan="7" style={{ textAlign: "center", padding: "20px" }}>
+                Belum ada pesanan
               </td>
             </tr>
-          ))}
+          ) : (
+            orders.map((order) =>
+              order.items.map((item, index) => (
+                <tr key={`${order.orderNo}-${index}`}>
+                  <td>{order.orderNo}</td>
+                  <td className="itemCell">
+                    <img src={item.image} alt={item.name} />
+                    <span>{item.name}</span>
+                  </td>
+                  <td>
+                    <span className="status success">Sudah Sampai</span>
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleRatingClick(item);
+                      }}
+                    >
+                      Rating
+                    </a>
+                  </td>
+                  <td>{order.date}</td>
+                  <td>{item.price}</td>
+                  <td>
+                    <button
+                      className="reorderBtn"
+                      onClick={() => handleReorder(item.id)} // ✅ arahkan ke produk sesuai ID
+                    >
+                      Re-Order →
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )
+          )}
         </tbody>
       </table>
+
+      <AddReview
+        isOpen={isReviewOpen}
+        onClose={() => setIsReviewOpen(false)}
+        product={selectedProduct}
+      />
     </div>
   );
 };

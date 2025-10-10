@@ -5,21 +5,19 @@ import witaIMG from "../../../assets/images/Wita.jpg";
 import kireiIMG from "../../../assets/images/Kirei.png";
 import zaraIMG from "../../../assets/images/Zara.jpg";
 import arielIMG from "../../../assets/images/ariel.png";
-import rafiIMG from "../../../assets/images/Rafi.jpg"
+import daffaIMG from "../../../assets/images/Daffa.png";
+import rakhaIMG from "../../../assets/images/Rakha.png";
 
 
 const team = [
   { id: 1, name: "Rizky Saputra Al Amir", role: "Technopreneur", img: ekaIMG },
-  { id: 2, name: "Muhammad Faris Alfaqih", role: "Technopreneur", img: "" },
-  { id: 3, name: "Muhammad Daffa Fachrurozi", role: "Technopreneur", img: "" },
-  { id: 4, name: "Kirei Najwa Shafira", role: "UI/UX", img: kireiIMG},
-  { id: 5, name: "Azzahra Aulia Khoirunnisa", role: "UI/UX", img: zaraIMG },
-  { id: 6, name: "Wita Septia Ningrum Nuriachmad Miarjo", role: "UI/UX", img: witaIMG },
-  { id: 7, name: "Ariel Christsando Yudistya Putra", role: "Frontend", img: arielIMG },
-  { id: 8, name: "Wisnu Cakra Putra Pamungkas", role: "Frontend", img: wisnuIMG },
-  { id: 9, name: "Muhammad Rakha Alfaruq", role: "Frontend", img: "https://via.placeholder.com/200" },
-  { id: 10, name: "Naufal Rafi", role: "Backend", img: rafiIMG },
-  // { id: 11, name: "Cheisya Valda Wibawaningrum", role: "Backend", img: "https://via.placeholder.com/200" },
+  { id: 2, name: "Muhammad Daffa Fachrurozi", role: "Technopreneur", img: daffaIMG },
+  { id: 3, name: "Kirei Najwa Shafira", role: "UI/UX", img: kireiIMG},
+  { id: 4, name: "Azzahra Aulia Khoirunnisa", role: "UI/UX", img: zaraIMG },
+  { id: 5, name: "Wita Septia Ningrum Nuriachmad Miarjo", role: "UI/UX", img: witaIMG },
+  { id: 6, name: "Ariel Christsando Yudistya Putra", role: "Frontend", img: arielIMG },
+  { id: 7, name: "Wisnu Cakra Putra Pamungkas", role: "Frontend", img: wisnuIMG },
+  { id: 8, name: "Muhammad Rakha Alfaruq", role: "Frontend", img: rakhaIMG },
 ];
 
 const TeamSection = () => {
