@@ -1,3 +1,4 @@
+import Footer from "../../../components/Footer";
 import Navbar from "../../../components/NavbarLogin";
 import ArticleCard from "../components/ArticleCard";
 import { allArticle } from "../datas/DataArticle";
@@ -21,6 +22,7 @@ function ArticleSaved({ savedArticle }) {
                     <p>Anda belum menyimpan artikel apa pun.</p>
                 )}
             </div>
+            <Footer />
         </div>
     );
 }

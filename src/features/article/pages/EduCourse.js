@@ -1,3 +1,4 @@
+import Footer from "../../../components/Footer";
 import Navbar from "../../../components/NavbarLogin";
 import QuizSection from "../components/QuizSection";
 import { quizData } from "../datas/DataEdu";
@@ -22,6 +23,7 @@ function EduCourse() {
                     <QuizSection quiz={courseQuiz.questions} />
                 </section>
             </main>
+            <Footer />
         </div>
     );
 }
