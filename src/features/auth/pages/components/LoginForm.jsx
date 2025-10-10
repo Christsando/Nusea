@@ -10,15 +10,15 @@ const LoginForm = () => {
 
   const users = [
     {
-      email: "admin@gmail.com",
+      email: "user1@gmail.com",
       password: "12345678",
     },
     {
-      email: "user@gmail.com",
+      email: "user2@gmail.com",
       password: "12345678",
     },
     {
-      email: "nelayan@gmail.com",
+      email: "user3@gmail.com",
       password: "1234678",
     },
   ];
