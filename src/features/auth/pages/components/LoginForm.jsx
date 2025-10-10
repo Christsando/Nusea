@@ -8,21 +8,20 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [loggedUser, setLoggedUser] = useState(null);
 
-  // Hardcode beberapa user
   const users = [
     {
       email: "admin@gmail.com",
-      password: "12345",
+      password: "12345678",
       role: "admin",
     },
     {
       email: "user@gmail.com",
-      password: "abcde",
+      password: "12345678",
       role: "user",
     },
     {
       email: "nelayan@gmail.com",
-      password: "ikanlaut",
+      password: "1234678",
       role: "nelayan",
     },
   ];
@@ -30,7 +29,6 @@ const LoginForm = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Cari user yang cocok
     const foundUser = users.find(
       (user) => user.email === email && user.password === password
     );
@@ -117,7 +115,6 @@ const LoginForm = () => {
         </p>
       </div>
 
-      {/* Popup tanpa validasi role */}
       {showPopup && loggedUser && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="p-8 rounded-lg shadow-lg text-center relative max-w-md w-full">
@@ -125,16 +122,10 @@ const LoginForm = () => {
               Sign In Sebagai?
             </h2>
             <div className="flex justify-center flex-wrap gap-6">
-              <a
-                href="/nelayan-home"
-                className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100"
-              >
+              <a href="/nelayan-home" className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100">
                 Nelayan
               </a>
-              <a
-                href="/"
-                className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100"
-              >
+              <a href="/market" className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100">
                 Pelanggan
               </a>
             </div>
