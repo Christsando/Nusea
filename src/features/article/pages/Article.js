@@ -2,6 +2,7 @@ import { useState } from "react";
 import ArticleCard from "../components/ArticleCard";
 import Navbar from "../../../components/NavbarLogin";
 import { latestArticle, recentArticle } from "../datas/DataArticle";
+import Footer from "../../../components/Footer";
 
 const category = ["Perikanan", "Ekspor & Pasar Global", "Inovasi Nelayan", "Pengalaman Nelayan"];
 
@@ -44,6 +45,7 @@ function Article() {
                     ))}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

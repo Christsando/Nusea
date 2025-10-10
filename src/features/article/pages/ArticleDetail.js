@@ -5,6 +5,7 @@ import CommentButton from "../components/CommentButton";
 import { useState, useRef } from "react";
 import { allArticle } from "../datas/DataArticle";
 import { useParams } from "react-router-dom";
+import Footer from "../../../components/Footer";
 
 const commentsData = [
     { name: "Hasan", location: "Nelayan, Sulawesi Selatan", comment: "Saya biasanya jual ikan ke tengkulak, jadi belum pernah coba ekspor. Kalau mau menjaga kualitas ikan gimana ya caranya biar bertahan dengan es balok biasa di kapal?" },
@@ -52,6 +53,7 @@ function ArticleDetail({ savedArticle, toggleBookmark }) {
                 <CommentSection comments={comments} onAddComment={handleAddComment} />
             </section>
             <CommentButton onClick={goto} />
+            <Footer />
         </div>
     );
 }

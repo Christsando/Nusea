@@ -5,6 +5,7 @@ import icon3 from "../../../assets/images/article/Circle Avatar2.png";
 import icon4 from "../../../assets/images/article/Circle Avatar3.png";
 import { useNavigate } from "react-router-dom";
 import { courseData } from "../datas/DataEdu";
+import Footer from "../../../components/Footer";
 
 const educateData = [
     { icon: icon1, title: "Ekspor & Pasar Global", caption: "Belajar langkah demi langkah untuk menembus pasar internasional" },
@@ -63,6 +64,7 @@ function EduPage() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </div>
     );
 }
