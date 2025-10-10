@@ -13,7 +13,6 @@ const SignupForm = () => {
   const handleSignupClick = (e) => {
     e.preventDefault();
 
-    // Validasi sederhana
     if (!formData.email || !formData.password || !formData.confirmPassword) {
       alert("Semua field harus diisi!");
       return;
@@ -24,7 +23,6 @@ const SignupForm = () => {
       return;
     }
 
-    // Langsung tampilkan popup pemilihan peran
     setShowPopup(true);
   };
 
@@ -34,7 +32,6 @@ const SignupForm = () => {
 
   const handleRoleSelect = (role) => {
     setShowPopup(false);
-    // Redirect ke halaman sesuai peran
     if (role === "nelayan") {
       window.location.href = "/nelayan-home";
     } else if (role === "pelanggan") {
@@ -52,7 +49,6 @@ const SignupForm = () => {
           Dari Nelayan Lokal ke Dunia, Dimulai di Sini.
         </h2>
 
-        {/* FORM REGISTRASI */}
         <form onSubmit={handleSignupClick} className="space-y-4 flex flex-col gap-0">
           <label>Email</label>
           <input
@@ -87,10 +83,7 @@ const SignupForm = () => {
             <input type="checkbox" className="mr-1" /> Remember me
           </label>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-md font-semibold"
-          >
+          <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-md font-semibold"> 
             Sign up
           </button>
 
@@ -114,22 +107,15 @@ const SignupForm = () => {
         </p>
       </div>
 
-      {/* POPUP PILIH ROLE */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="p-8 rounded-lg shadow-lg text-center relative max-w-md w-full ">
             <h2 className="text-xl font-semibold mb-6 text-white">Sign Up Sebagai?</h2>
             <div className="flex justify-center gap-6">
-              <a href="/nelayan-home" 
-                
-                className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100"
-              >
+              <a href="/nelayan-home" className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100">
                 Nelayan
               </a >
-              <a href="/" 
-                
-                className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100"
-              >
+              <a href="/market" className="px-6 py-3 bg-white border rounded-md shadow hover:bg-gray-100">
                 Pelanggan
               </a >
             </div>
