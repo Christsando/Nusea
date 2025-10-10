@@ -10,19 +10,16 @@ const LoginForm = () => {
 
   const users = [
     {
-      email: "admin@gmail.com",
+      email: "user1@gmail.com",
       password: "12345678",
-      role: "admin",
     },
     {
-      email: "user@gmail.com",
+      email: "user2@gmail.com",
       password: "12345678",
-      role: "user",
     },
     {
-      email: "nelayan@gmail.com",
+      email: "user3@gmail.com",
       password: "1234678",
-      role: "nelayan",
     },
   ];
 
@@ -44,7 +41,6 @@ const LoginForm = () => {
   const handleGoogleLogin = () => {
     const googleUser = {
       email: "googleuser@gmail.com",
-      role: "googleUser",
     };
     setLoggedUser(googleUser);
     setShowPopup(true);
