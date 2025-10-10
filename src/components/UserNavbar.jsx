@@ -20,7 +20,7 @@ const UserNavbar = () => {
     }, [dropdownRef]);
 
     return (
-        <nav className="flex items-center justify-between px-8 py-2 shadow-sm bg-white">
+        <nav className="flex items-center justify-between px-8 py-2 shadow-sm bg-white fixed z-10 w-full">
             <div className="flex items-center gap-2">
                 <img src={logo} alt="Logo" className="w-16 h-16" />
             </div>
@@ -65,7 +65,7 @@ const UserNavbar = () => {
             <input type="text" placeholder="Search" className="px-3 py-2 border lg:w-1/4 rounded-md focus:outline-none focus:ring focus:ring-blue-300" />
 
             <div className="flex items-center gap-6">
-                <a href="">
+                <a href="mailto:contact@nusea.com">
                     <img src={emailDrop} />
                 </a>
                 <div className="flex flex-col items-center">
