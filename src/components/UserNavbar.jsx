@@ -5,14 +5,14 @@ import emailDrop from "../assets/email_drop.png"
 
 const UserNavbar = () => {
   return (
-    <nav className="flex items-center justify-between px-8 py-2 shadow-sm bg-white">
+    <nav className="flex items-center justify-between px-8 py-2 shadow-sm bg-white fixed w-full z-10">
 
         <div className="flex items-center gap-2">
             <img src={logo} alt="Logo" className="w-16 h-16" />
         </div>
 
         <ul className="flex items-center gap-8 text-gray-700 font-medium">
-            <li><a href="/" className="hover:text-blue-600">Home</a></li>
+            <li><a href="/nelayan-home" className="hover:text-blue-600">Home</a></li>
             <li><a href="/article" className="hover:text-blue-600">Article</a></li>
             <li><a href="/edupage" className="hover:text-blue-600">Education</a></li>
             <li><a href="/#contact" className="hover:text-blue-600">Contact</a></li>
