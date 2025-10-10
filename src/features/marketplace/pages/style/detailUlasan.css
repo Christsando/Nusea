@@ -1,0 +1,10 @@
+.App main {
+    padding: 60px 20px 30px 20px;
+    min-height: 100vh;
+}
+
+.reviewContainers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

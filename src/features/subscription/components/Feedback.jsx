@@ -30,18 +30,18 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Arabica",
+    name: "Adit",
     text: "Thanks Nusea, i hope Nusea can continue to develop and have a big impact",
     rating: 5,
-    img: user3,
+    img: user1,
     bg: "bg-blue-200",
   },
   {
     id: 3,
-    name: "Arabica",
+    name: "Denis",
     text: "Thanks Nusea, i hope Nusea can continue to develop and have a big impact",
     rating: 5,
-    img: user3,
+    img: user2,
     bg: "bg-blue-200",
   },
 ];

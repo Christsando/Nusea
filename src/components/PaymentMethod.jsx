@@ -1,9 +1,17 @@
-// PaymentMethod.jsx
 import { useState } from "react";
 import "./style/paymentMethod.css";
+import Qris from "../assets/images/qr-nusea.jpg";
+import Paypal from "../assets/images/paypal.png";
+import Debit from "../assets/images/debit.png";
+import Visa from "../assets/images/visa.png";
 
-const PaymentMethod = ({ onClose }) => {
-  const [method, setMethod] = useState("qris"); // default Qris
+const PaymentMethod = ({ onClose, onSuccess }) => {
+  const [method, setMethod] = useState("qris");
+
+  const handlePay = () => {
+    // Tutup PaymentMethod dan buka popup sukses
+    onSuccess();
+  };
 
   return (
     <div className="popupOverlay">
@@ -23,14 +31,15 @@ const PaymentMethod = ({ onClose }) => {
           />
           <label>Credit Card</label>
           <div className="icons">
-            <img src="visa.png" alt="Visa" />
-            <img src="mastercard.png" alt="Mastercard" />
-            <img src="paypal.png" alt="Paypal" />
+            <img src={Visa} alt="Visa" />
+            <img src={Debit} alt="Mastercard" />
+            <img src={Paypal} alt="Paypal" />
           </div>
         </div>
+
         {method === "card" && (
           <div className="cardForm">
-            <input type="text" placeholder="Nama di Kartu" defaultValue="Dania Lestari" />
+            <input type="text" placeholder="Nama di Kartu" />
             <input type="text" placeholder="Nomor Kartu" />
             <input type="text" placeholder="Tanggal kadaluarsa (MM/YY)" />
             <input type="text" placeholder="Kode keamanan" />
@@ -50,17 +59,20 @@ const PaymentMethod = ({ onClose }) => {
           />
           <label>Qris</label>
         </div>
+
         {method === "qris" && (
           <div className="qrisBox">
-            <img src="qris.png" alt="QR Code" className="qrisImage" />
+            <img src={Qris} alt="QR Code" className="qrisImage" />
           </div>
         )}
 
         {/* Button */}
         <div className="actions">
-          {method === "card" && <button className="payBtn">Pay Now</button>}
+          <button className="payBtn" onClick={handlePay}>
+            Bayar Sekarang
+          </button>
           <button className="closeBtn" onClick={onClose}>
-            Close
+            Tutup
           </button>
         </div>
       </div>
