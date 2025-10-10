@@ -1,4 +1,3 @@
-// PaymentPage.jsx
 import React, { useState } from "react";
 import PaymentMethod from "../../../components/PaymentMethod";
 import PaymentSuccessPopUp from "../../../components/PaymentSuccessPopUp";
@@ -72,12 +71,6 @@ const PaymentPage = () => {
                 <option>PayPal</option>
               </select>
             </div>
-
-            {/* <div className="flex justify-center">
-              <button type="button" onClick={handlePaymentClick} className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold m-10">
-                Bayar Sekarang
-              </button>
-            </div> */}
 
             <div className="flex justify-center">
               <button
