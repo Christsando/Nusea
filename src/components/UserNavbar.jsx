@@ -27,7 +27,7 @@ const UserNavbar = () => {
 
             <ul className="flex items-center gap-8 text-gray-700 font-medium">
                 <li>
-                    <a href="/" className="hover:text-blue-600">
+                    <a href="/nelayan-home" className="hover:text-blue-600">
                         Home
                     </a>
                 </li>
@@ -56,7 +56,7 @@ const UserNavbar = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="/#contact" className="hover:text-blue-600">
+                    <a href="#contact" className="hover:text-blue-600">
                         Contact
                     </a>
                 </li>
