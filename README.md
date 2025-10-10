@@ -4,7 +4,7 @@ Nusea adalah platform pemberdayaan nelayan-nelayan kecil di Indonesia yang menye
 
 ## Introduce People in Nusea Team Project
 
-- Frontend Developer : [Ariel Christsando Yudistya Putra, Wisnu, dan Rakha]
-- UI/UX : [Wita, Zahra, dan ...]
-- TechnoPreneur : [Eka, Daffa, dan ...]
+- Frontend Developer : [Ariel Christsando Yudistya Putra, Wisnu Cakra Putra Pamungkas, dan Muhammad Rakha Alfaruq]
+- UI/UX : [Wita Septia Ningrun Nuriachmad Miarjo, Azzahra Aulia Khoirunnisa, dan Kirei Najwa Shafira]
+- TechnoPreneur : [Rizky Saputra Al Amir dan Muhammad Daffa Fachrurozi]
 - Backend : -
