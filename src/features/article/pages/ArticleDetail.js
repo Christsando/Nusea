@@ -1,4 +1,3 @@
-import Navbar from "../../../components/NavbarLogin";
 import ArticleMeta from "../components/ArticleMeta";
 import CommentSection from "../components/CommentSection";
 import CommentButton from "../components/CommentButton";
@@ -6,6 +5,7 @@ import { useState, useRef } from "react";
 import { allArticle } from "../datas/DataArticle";
 import { useParams } from "react-router-dom";
 import Footer from "../../../components/Footer";
+import UserNavbar from "../../../components/UserNavbar";
 
 const commentsData = [
     { name: "Hasan", location: "Nelayan, Sulawesi Selatan", comment: "Saya biasanya jual ikan ke tengkulak, jadi belum pernah coba ekspor. Kalau mau menjaga kualitas ikan gimana ya caranya biar bertahan dengan es balok biasa di kapal?" },
@@ -32,7 +32,7 @@ function ArticleDetail({ savedArticle, toggleBookmark }) {
 
     return (
         <div className="bg-white min-h-screen">
-            <Navbar />
+            <UserNavbar />
             <section className="container mx-auto px-40 py-10 mt-20">
                 <div className="max-w-5xl mx-auto">
                     <div className="w-full h-96 flex justify-center items-center overflow-hidden">
